@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import FBAudienceNetwork;
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    FBAdView *view = [[FBAdView alloc] initWithPlacementID:@"" adSize:kFBAdSize320x50 rootViewController:self];
+    [view loadAd];
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning {
